@@ -10,12 +10,13 @@ require('packer').startup(function(use)
 
   -- Appearance
   use {
-    'sainnhe/edge',
+    'sainnhe/everforest',
     config = function()
-      vim.g.edge_transparent_background = 2
-      vim.g.edge_better_performance = 1
-      vim.g.edge_enable_italic = false
-      vim.cmd.colorscheme 'edge'
+      vim.g.everforest_transparent_background = 2
+      vim.g.everforest_better_performance = 1
+      vim.g.everforest_enable_italic = false
+      vim.g.everforest_background = 'hard'
+      vim.cmd.colorscheme 'everforest'
     end,
   }
   use('nvim-tree/nvim-web-devicons')

@@ -13,7 +13,7 @@ end
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = 'edge',
+    theme = 'everforest',
     component_separators = { left = '|', right = '|' },
     section_separators = {},
     globalstatus = true,
