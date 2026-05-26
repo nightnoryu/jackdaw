@@ -1,0 +1,61 @@
+{
+  "layer": "bot",
+  "margin-bottom": 0,
+  "margin-top": 0,
+  "position": "top",
+  "modules-left": [
+    "hyprland/workspaces",
+    "tray"
+  ],
+  "modules-center": [
+    "hyprland/window"
+  ],
+  "modules-right": [
+    "cpu",
+    "memory",
+    "network",
+    "pulseaudio",
+    "battery",
+    "clock"
+  ],
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": false,
+    "tooltip": false
+  },
+  "tray": {
+    "spacing": 8
+  },
+  "clock": {
+    "format": " {:%H:%M}",
+    "interval": 60,
+    "tooltip": true,
+    "tooltip-format": "{:%d %B %H:%M}"
+  },
+  "cpu": {
+    "format": " {usage}%"
+  },
+  "memory": {
+    "format": " {}%"
+  },
+  "network": {
+    "format": " {bandwidthDownBits}",
+    "format-disconnected": "󰤮 No Network",
+    "interval": 5,
+    "tooltip": false,
+    "on-click": "kitty -e nmtui"
+  },
+  "pulseaudio": {
+    "scroll-step": 5,
+    "max-volume": 100,
+    "format": " {volume}%",
+    "nospacing": 1,
+    "format-muted": "",
+    "on-click": "pavucontrol",
+    "tooltip": false
+  },
+  "battery": {
+    "format": "{icon} {capacity}%",
+    "format-icons": ["", "", "", "", ""]
+  }
+}

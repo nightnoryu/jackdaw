@@ -1,12 +1,16 @@
 show=drun
 show_all=true
-location=center
-insensitive=false
+
 allow_markup=true
 allow_images=true
-line_wrap=word
-lines=8
+
+location=center
 width=500
-no_actions=true
-prompt= Search
+height=500
+layer=overlay
 hide_scroll=true
+
+line_wrap=word
+no_actions=true
+insensitive=false
+prompt=Search
