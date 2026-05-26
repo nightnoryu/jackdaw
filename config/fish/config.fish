@@ -13,6 +13,7 @@ set PATH $PATH $HOME/go/bin
 
 alias vim="nvim"
 alias cat="bat"
+alias ssh="kitty +kitten ssh"
 alias g="git"
 
 alias gs="git status --short"
