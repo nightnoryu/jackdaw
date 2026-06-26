@@ -10,6 +10,7 @@ set -gx GOPATH "$HOME/go"
 
 set PATH $PATH $HOME/.config/scripts
 set PATH $PATH $HOME/go/bin
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 alias vim="nvim"
 alias cat="bat"
