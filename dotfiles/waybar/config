@@ -24,23 +24,23 @@
     "tooltip": false
   },
   "tray": {
-    "spacing": 8
+    "spacing": 6
   },
   "clock": {
-    "format": " {:%H:%M}",
+    "format": "{:%H:%M}",
     "interval": 60,
     "tooltip": true,
     "tooltip-format": "{:%d %B %H:%M}"
   },
   "cpu": {
-    "format": " {usage}%"
+    "format": "   {usage}%"
   },
   "memory": {
-    "format": " {}%"
+    "format": "   {}%"
   },
   "network": {
-    "format": " {bandwidthDownBits}",
-    "format-disconnected": "󰤮 No Network",
+    "format": "   {bandwidthDownBits}",
+    "format-disconnected": "󰤮   No Network",
     "interval": 5,
     "tooltip": false,
     "on-click": "kitty -e nmtui"
@@ -48,14 +48,14 @@
   "pulseaudio": {
     "scroll-step": 5,
     "max-volume": 100,
-    "format": " {volume}%",
+    "format": "   {volume}%",
     "nospacing": 1,
     "format-muted": "",
     "on-click": "pavucontrol",
     "tooltip": false
   },
   "battery": {
-    "format": "{icon} {capacity}%",
+    "format": "{icon}   {capacity}%",
     "format-icons": ["", "", "", "", ""]
   }
 }

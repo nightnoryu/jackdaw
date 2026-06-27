@@ -1,7 +1,9 @@
+/* General */
+
 *
 {
-  font-family: FiraCode Nerd Font Mono;
-  font-size: 14px;
+  font-family: IBM Plex Sans;
+  /* font-size: 14px; */
 }
 
 window#waybar
@@ -17,9 +19,12 @@ button
   border-radius: 0;
 }
 
+/* Left */
+
 #workspaces
 {
   margin-left: 0;
+  font-size: 14px;
 }
 
 #workspaces button
@@ -35,6 +40,21 @@ button
   border-top: 2px solid #7cb58a;
 }
 
+/* Center */
+
+#window
+{
+  margin: 2px;
+  padding-left: 6px;
+  padding-right: 6px;
+  border-radius: 8px;
+  background-color: rgba(0,0,0,0.7);
+  color: #f6f5f4;
+  font-size: 16px;
+}
+
+/* Right */
+
 #clock,
 #battery,
 #cpu,
@@ -42,18 +62,19 @@ button
 #temperature,
 #network,
 #pulseaudio,
-#tray,
-#window
+#tray
 {
-  margin: 3px;
+  margin: 2px;
   padding-left: 4px;
   padding-right: 4px;
-  background-color: rgba(0,0,0,0.6);
+  background-color: rgba(0,0,0,0.7);
   border-radius: 5px;
   color: #f6f5f4;
+  font-size: 14px;
 }
 
 #clock
 {
   font-weight: bold;
+  font-size: 16px;
 }
