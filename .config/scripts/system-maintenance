@@ -10,9 +10,9 @@ update_system() {
 
 clear_pacman_cache() {
   print_header "clearing pacman cache..."
-  PACMAN_CACHE_SPACE="$(du -sh /var/cache/pacman/pkg/)"
-  paccache -vrk2
-  paccache -ruk0
+  PACMAN_CACHE_SPACE="$(sudo du -sh /var/cache/pacman/pkg/)"
+  sudo paccache -vrk2
+  sudo paccache -ruk0
   echo "pacman cache cleared, reclaimed $PACMAN_CACHE_SPACE"
   echo
 }
@@ -52,6 +52,6 @@ print_header() {
 
 update_system
 clear_pacman_cache
-remove_orphaned_packages
+# remove_orphaned_packages
 clear_local_cache
 clear_system_logs
