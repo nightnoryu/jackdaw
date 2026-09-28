@@ -4,14 +4,16 @@ My laptop configuration, managed with [mise](https://mise.jdx.dev).
 
 ## Bootstrap
 
-1. Copy the wallpapers
+1. Install mise - see [docs](https://mise.jdx.dev/installing-mise.html)
+
+2. Copy the wallpapers
 
     ```shell
     mkdir -p ~/pictures
     cp -r wallpapers ~/pictures
     ```
 
-2. Run mise
+3. Apply the mise config
 
     ```shell
     mise dot apply
