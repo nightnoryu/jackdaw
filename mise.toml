@@ -1,0 +1,10 @@
+[settings]
+dotfiles.relative_symlinks = true
+
+[dotfiles]
+"~" = {
+    source = "home",
+    mode = "symlink-each",
+    dot_prefix = true,
+    manifest = "git"
+}

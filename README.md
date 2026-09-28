@@ -1,26 +1,20 @@
 # jackdaw
 
-My laptop configuration, managed with GNU Stow.
-
-## Structure
-
-- `.config/` - Application configuration
-- `wallpapers/` - Wallpapers
-- `link-configs` - Helper for creating symlinks
+My laptop configuration, managed with [mise](https://mise.jdx.dev).
 
 ## Bootstrap
 
-1. Run the script
-
-    ```shell
-    ./link-configs
-    ```
-
-    This will create symlinks for all the configs in your home directory.
-
-2. Copy the wallpapers
+1. Copy the wallpapers
 
     ```shell
     mkdir -p ~/pictures
     cp -r wallpapers ~/pictures
     ```
+
+2. Run mise
+
+    ```shell
+    mise dot apply
+    ```
+
+    This will create symlinks for all the configs in your home directory.
