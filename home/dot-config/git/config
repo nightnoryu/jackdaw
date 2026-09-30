@@ -21,6 +21,9 @@
 [push]
   autoSetupRemote = true
 
+[pull]
+  rebase = false
+
 [diff]
   context = 3
   renames = copies
