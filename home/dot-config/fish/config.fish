@@ -7,11 +7,6 @@ if status is-interactive
     set fish_greeting
 end
 
-alias vim="nvim"
-alias cat="bat"
-alias ssh="kitty +kitten ssh"
-alias s="ssh-fzf"
-
 set -gx EDITOR nvim
 set -gx MANPAGER 'nvim +Man!'
 set PATH $PATH $HOME/.config/scripts
@@ -20,29 +15,42 @@ set PATH $PATH $HOME/.config/scripts
 # Dev tools
 # --------------------
 
-## Go
-
-set -gx GOROOT "/home/linuxbrew/.linuxbrew/opt/go/libexec"
-set -gx GOPATH "$HOME/go"
-set -gx GOPRIVATE "*.ispring.lan"
-set PATH $PATH $HOME/go/bin
-
 ## Brew
 
 set -gx HOMEBREW_NO_ENV_HINTS 1
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)"
 
-## Git
+## Go
+
+set -gx GOROOT "/home/linuxbrew/.linuxbrew/opt/go/libexec"
+set -gx GOPATH "$HOME/go"
+set PATH $PATH $HOME/go/bin
+
+# --------------------
+# Aliases
+# --------------------
+
+alias vim="nvim"
+alias cat="bat"
+alias ll="ls -l"
+
+alias ssh="kitty +kitten ssh"
+alias s="ssh-fzf"
+
+alias dc="docker compose"
+alias m="mise"
 
 alias g="git"
-
 alias gs="git status --short"
 alias gd="git diff --output-indicator-new=' ' --output-indicator-old=' '"
-alias gl="git log  --graph"
-
+alias gl="git log --oneline --graph --color=always"
+alias gco="git checkout"
 alias ga="git add"
 alias gc="git commit"
-alias gco="git checkout"
-
 alias gp="git push"
+alias gf="git fetch"
 alias gu="git pull"
+function gmm --wraps rm --description 'alias gmm=git fetch origin && git merge origin/main'
+  git fetch origin
+  git merge origin/$(git show-ref -q --heads main && echo main || echo master)
+end
