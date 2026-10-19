@@ -50,7 +50,10 @@ alias gc="git commit"
 alias gp="git push"
 alias gf="git fetch"
 alias gu="git pull"
-function gmm --wraps rm --description 'alias gmm=git fetch origin && git merge origin/main'
+function gmm --wraps git --description 'alias gmm=git fetch origin && git merge origin/main'
   git fetch origin
   git merge origin/$(git show-ref -q --heads main && echo main || echo master)
+end
+function gltl --wraps git --description 'alias gtl=git log <last tag>..HEAD --oneline'
+  git log $(git describe --tags --abbrev=0)..HEAD --oneline
 end
