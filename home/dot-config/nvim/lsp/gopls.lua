@@ -1,0 +1,14 @@
+return {
+  cmd = { "gopls" },
+  filetypes = { "go", "gomod", "gowork" },
+  root_markers = { "go.work", "go.mod", ".git" },
+  settings = {
+    gopls = {
+      staticcheck = true,
+      gofumpt = true,
+      analyses = {
+        unusedparams = true,
+      },
+    },
+  },
+}
