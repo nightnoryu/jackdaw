@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+connect_fuzzy() {
+  SSH_CONFIG="$HOME/.ssh/config"
+
+  HOSTS=$(grep -h "Host " "$SSH_CONFIG")
+  SELECTION=$(echo "$HOSTS" | cut -b 6- | fzf --height 40% --layout reverse --border)
+
+  if [ -n "$SELECTION" ]; then
+    ssh "$SELECTION"
+  else
+    echo no host selected.
+  fi
+}
+
+connect() {
+  ssh $1
+}
+
+if [[ -n $1 ]]; then
+  connect $1
+else
+  connect_fuzzy
+fi
