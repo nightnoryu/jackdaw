@@ -20,7 +20,7 @@ require('packer').startup(function(use)
     end,
   }
   use('nvim-tree/nvim-web-devicons')
-  use('hoob3rt/lualine.nvim')
+  use('nvim-lualine/lualine.nvim')
 
   -- File navigation
   use {
@@ -56,12 +56,6 @@ require('packer').startup(function(use)
 
   -- Miscellaneous
   use('tpope/vim-fugitive')
-  use {
-    'nathom/filetype.nvim',
-    setup = function()
-      vim.g.did_load_filetypes = 1
-    end,
-  }
 
   if packer_bootstrap then
     require('packer').sync()
