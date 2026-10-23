@@ -10,7 +10,6 @@ vim.opt.termguicolors = true
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.cursorline = true
-vim.opt.winborder = 'rounded'
 
 vim.opt.smartindent = true
 vim.opt.copyindent = true
@@ -34,7 +33,7 @@ vim.opt.confirm = true
 
 vim.opt.wildmode = 'longest,list,full'
 vim.opt.wildignorecase = true
-vim.opt.completeopt = 'menuone,noselect'
+vim.opt.completeopt = 'menuone,noselect,popup'
 vim.opt.shortmess:append('c')
 
 vim.opt.diffopt:append('internal,algorithm:patience')
