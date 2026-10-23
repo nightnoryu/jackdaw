@@ -5,15 +5,7 @@ My laptop configuration, managed with [mise](https://mise.jdx.dev).
 ## Bootstrap
 
 1. Install mise - see [docs](https://mise.jdx.dev/installing-mise.html)
-
-2. Copy the wallpapers
-
-    ```shell
-    mkdir -p ~/pictures
-    cp -r wallpapers ~/pictures
-    ```
-
-3. Apply the mise config
+2. Apply the dotfiles config
 
     ```shell
     mise dot apply

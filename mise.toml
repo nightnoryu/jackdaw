@@ -2,5 +2,13 @@
 dotfiles.relative_symlinks = true
 
 [dotfiles]
-"~/.config/nvim" = { source = "nvim", mode = "symlink" }
+"~/.config/fish" = { source = "fish", mode = "symlink" }
 "~/.config/git" = { source = "git", mode = "symlink" }
+"~/.config/hypr" = { source = "hypr", mode = "symlink" }
+"~/.config/kitty" = { source = "kitty", mode = "symlink" }
+"~/.config/nvim" = { source = "nvim", mode = "symlink" }
+"~/.config/waybar" = { source = "waybar", mode = "symlink" }
+"~/.config/wofi" = { source = "wofi", mode = "symlink" }
+
+"~/.config/scripts" = { source = "scripts", mode = "symlink" }
+"~/pictures/wallpapers" = { source = "wallpapers", mode = "symlink" }
