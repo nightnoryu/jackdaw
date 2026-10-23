@@ -1,3 +1,5 @@
+vim.g.mapleader = ' '
+
 vim.opt.updatetime = 50
 vim.opt.lazyredraw = true
 vim.opt.swapfile = false
