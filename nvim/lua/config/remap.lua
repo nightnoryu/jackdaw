@@ -32,3 +32,5 @@ nnoremap <silent> gs :set opfunc=Sort<CR>g@
 ]]
 
 vim.keymap.set('i', '<C-j>', '<C-^>')
+
+vim.keymap.set('n', '-', ':Oil<CR>')

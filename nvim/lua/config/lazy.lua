@@ -28,47 +28,42 @@ require("lazy").setup({
         vim.cmd.colorscheme 'everforest'
       end,
     },
-    { 'nvim-tree/nvim-web-devicons', lazy = true },
+    { 'nvim-tree/nvim-web-devicons' },
     { 'nvim-lualine/lualine.nvim' },
 
     -- File navigation
     {
-      'nvim-telescope/telescope.nvim',
+      'nvim-telescope/telescope.nvim', version = '*',
       dependencies = {
         'nvim-lua/plenary.nvim',
+        { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
       },
     },
     {
       'stevearc/oil.nvim',
-      config = function()
-        require('oil').setup({ view_options = { show_hidden = true } })
-        vim.keymap.set('n', '-', ':Oil<CR>')
-      end
+      opts = {
+        view_options = {
+          show_hidden = true,
+        },
+        columns = {
+          "icon",
+          "permissions",
+          "size",
+          "mtime",
+        },
+        skip_confirm_for_simple_edits = true,
+      },
     },
 
     -- Editing
-    {
-      'numToStr/Comment.nvim',
-      config = function()
-        require('Comment').setup({ ignore = '^$' })
-      end,
-    },
+    { 'numToStr/Comment.nvim', opts = { ignore = '^$' } },
     { 'tpope/vim-surround' },
     { 'tpope/vim-repeat' },
-    {
-      'windwp/nvim-autopairs',
-      event = 'InsertEnter',
-      config = function()
-        require('nvim-autopairs').setup()
-      end,
-    },
+    { 'windwp/nvim-autopairs', event = 'InsertEnter', opts = {} },
 
     -- Git
-    { 'tpope/vim-fugitive' },
+    { 'tpope/vim-fugitive', cmd = 'G' },
     { 'lewis6991/gitsigns.nvim' },
-
-    -- import your plugins
-    -- { import = "plugins" },
   },
   checker = { enabled = false },
 })

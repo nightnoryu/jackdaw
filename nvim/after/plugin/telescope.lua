@@ -12,7 +12,14 @@ telescope.setup({
       },
     },
   },
+  extensions = {
+    fuzzy = true,
+    override_generic_sorter = true,
+    override_file_sorter = true,
+  },
 })
+
+telescope.load_extension('fzf')
 
 vim.keymap.set('n', '<C-p>', builtin.find_files)
 vim.keymap.set('n', '<leader>fg', builtin.live_grep)
