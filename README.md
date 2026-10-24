@@ -1,10 +1,16 @@
 # :black_bird: jackdaw
 
-My laptop configuration with Hyprland.
+My laptop configuration.
+
+## Philosophy
+
+- Minimal visual clutter
+- Keyboard-centered controls
+- No global development tools - I use mise with pinned versions for each project
 
 ## Requirements
 
-- Any Linux distribution
+- Arch Linux
 - git
 - [mise](https://mise.jdx.dev)
 
@@ -13,5 +19,6 @@ My laptop configuration with Hyprland.
 ```shell
 git clone https://github.com/nightnoryu/jackdaw ~/jackdaw
 cd ~/jackdaw
-mise dot apply
+mise bootstrap packages apply   # Install the required packages
+mise dot apply                  # Symlink the configs
 ```
