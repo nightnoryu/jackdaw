@@ -3,12 +3,12 @@
 # to whichever host you picked via fzf.
 
 connect() {
-  tsh ssh $1
+  tsh ssh "$1"
 }
 
 connect_fuzzy() {
-  HOSTS=$(tsh ls)
-  SELECTION=$(echo "$HOSTS" | awk 'FNR > 2 { print $1 }' | fzf --height 40% --layout reverse --border)
+  HOSTS=$(tsh ls -f names)
+  SELECTION=$(echo "$HOSTS" | fzf --height 40% --layout reverse --border)
 
   if [ -n "$SELECTION" ]; then
     connect "$SELECTION"
@@ -18,7 +18,7 @@ connect_fuzzy() {
 }
 
 if [[ -n $1 ]]; then
-  connect $1
+  connect "$1"
 else
   connect_fuzzy
 fi
