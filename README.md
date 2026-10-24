@@ -1,14 +1,17 @@
-# jackdaw
+# :black_bird: jackdaw
 
-My laptop configuration, managed with [mise](https://mise.jdx.dev).
+My laptop configuration with Hyprland.
 
-## Bootstrap
+## Requirements
 
-1. Install mise - see [docs](https://mise.jdx.dev/installing-mise.html)
-2. Apply the dotfiles config
+- Any Linux distribution
+- git
+- [mise](https://mise.jdx.dev)
 
-    ```shell
-    mise dot apply
-    ```
+## Installation
 
-    This will create symlinks for all the configs in your home directory.
+```shell
+git clone https://github.com/nightnoryu/jackdaw ~/jackdaw
+cd ~/jackdaw
+mise dot apply
+```
