@@ -32,7 +32,7 @@ set PATH $PATH $HOME/go/bin
 
 alias vim="nvim"
 alias cat="bat"
-alias ll="ls -l"
+alias ll="ls -lsah"
 
 alias ssh="kitty +kitten ssh"
 alias s="ssh-fzf"
