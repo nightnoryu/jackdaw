@@ -9,7 +9,7 @@ get_included_configs() {
 }
 
 connect() {
-  ssh $1
+  ssh "$1"
 }
 
 connect_fuzzy() {
@@ -26,7 +26,7 @@ connect_fuzzy() {
 }
 
 if [[ -n $1 ]]; then
-  connect $1
+  connect "$1"
 else
   connect_fuzzy
 fi
