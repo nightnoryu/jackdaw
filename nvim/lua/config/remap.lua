@@ -10,6 +10,8 @@ vim.keymap.set('t', '<C-j>', '<C-\\><C-n><C-w>j')
 vim.keymap.set('t', '<C-k>', '<C-\\><C-n><C-w>k')
 vim.keymap.set('t', '<C-l>', '<C-\\><C-n><C-w>l')
 
+vim.keymap.set('c', '<C-A>', '<Home>')
+
 vim.keymap.set('n', '<Right>', ':vertical resize +2<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<Left>', ':vertical resize -2<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<Up>', ':resize +2<CR>', { noremap = true, silent = true })
