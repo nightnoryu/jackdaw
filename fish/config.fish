@@ -11,6 +11,7 @@ set -gx EDITOR nvim
 set -gx MANPAGER 'nvim +Man!'
 
 fish_add_path $HOME/.config/scripts
+fish_add_path $HOME/.local/bin
 fish_add_path $HOME/go/bin
 
 set -gx HOMEBREW_NO_ENV_HINTS 1
