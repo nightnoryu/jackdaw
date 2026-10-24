@@ -1,10 +1,18 @@
 #!/usr/bin/env bash
+# Parses your ssh config with includes (1-level only) and
+# connects to whichever host you picked via fzf.
+
+BASE_SSH_CONFIG="$HOME/.ssh/config"
+
+get_included_configs() {
+  awk 'tolower($1) == "include" { for (i = 2; i <= NF; i++) print $i }' "$BASE_SSH_CONFIG" | sed "s|^~|$HOME|"
+}
 
 connect_fuzzy() {
-  SSH_CONFIG="$HOME/.ssh/config"
+  INCLUDED_CONFIGS=$(get_included_configs)
 
-  HOSTS=$(grep -h "Host " "$SSH_CONFIG")
-  SELECTION=$(echo "$HOSTS" | cut -b 6- | fzf --height 40% --layout reverse --border)
+  HOSTS=$(grep -h "^\s*Host " "$BASE_SSH_CONFIG" $INCLUDED_CONFIGS)
+  SELECTION=$(echo "$HOSTS" | awk '{ for (i = 2; i <= NF; i++) if ($i !~ /[*?!]/) print $i }' | fzf --height 40% --layout reverse --border)
 
   if [ -n "$SELECTION" ]; then
     ssh "$SELECTION"
