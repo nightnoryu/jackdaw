@@ -46,7 +46,6 @@ require("lazy").setup({
           show_hidden = true,
         },
         columns = {
-          "icon",
           "permissions",
           "size",
           "mtime",
