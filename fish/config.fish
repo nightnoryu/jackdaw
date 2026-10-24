@@ -3,28 +3,18 @@
 # --------------------
 
 if status is-interactive
-    # Commands to run in interactive sessions can go here
-    set fish_greeting
+  # Commands to run in interactive sessions can go here
+  set fish_greeting
 end
 
 set -gx EDITOR nvim
 set -gx MANPAGER 'nvim +Man!'
-set PATH $PATH $HOME/.config/scripts
 
-# --------------------
-# Dev tools
-# --------------------
-
-## Brew
+fish_add_path $HOME/.config/scripts
+fish_add_path $HOME/go/bin
 
 set -gx HOMEBREW_NO_ENV_HINTS 1
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)"
-
-## Go
-
-set -gx GOROOT "/home/linuxbrew/.linuxbrew/opt/go/libexec"
-set -gx GOPATH "$HOME/go"
-set PATH $PATH $HOME/go/bin
 
 # --------------------
 # Aliases
@@ -50,10 +40,6 @@ alias gc="git commit"
 alias gp="git push"
 alias gf="git fetch"
 alias gu="git pull"
-function gmm --wraps git --description 'alias gmm=git fetch origin && git merge origin/main'
-  git fetch origin
-  git merge origin/$(git show-ref -q --heads main && echo main || echo master)
-end
 function gltl --wraps git --description 'alias gtl=git log <last tag>..HEAD --oneline'
   git log $(git describe --tags --abbrev=0)..HEAD --oneline
 end

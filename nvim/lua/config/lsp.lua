@@ -42,3 +42,13 @@ vim.api.nvim_create_autocmd("LspAttach", {
 vim.lsp.enable({
   "gopls",
 })
+
+vim.diagnostic.config({
+  virtual_text = false,
+  signs = true,
+  underline = true,
+  severity_sort = true,
+  float = {
+    border = 'rounded',
+  },
+})

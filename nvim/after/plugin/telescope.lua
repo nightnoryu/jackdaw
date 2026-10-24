@@ -13,9 +13,11 @@ telescope.setup({
     },
   },
   extensions = {
-    fuzzy = true,
-    override_generic_sorter = true,
-    override_file_sorter = true,
+    fzf = {
+      fuzzy = true,
+      override_generic_sorter = true,
+      override_file_sorter = true,
+    },
   },
 })
 
