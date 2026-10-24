@@ -41,6 +41,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 vim.lsp.enable({
   "gopls",
+  -- "ra",
 })
 
 vim.diagnostic.config({
