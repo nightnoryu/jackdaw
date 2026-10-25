@@ -1,3 +1,5 @@
+local opts = { noremap = true, silent = true }
+
 vim.keymap.set('n', 'Q', '<nop>')
 
 vim.keymap.set('n', '<C-h>', '<C-w>h')
@@ -12,10 +14,10 @@ vim.keymap.set('t', '<C-l>', '<C-\\><C-n><C-w>l')
 
 vim.keymap.set('c', '<C-A>', '<Home>')
 
-vim.keymap.set('n', '<Right>', ':vertical resize +2<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<Left>', ':vertical resize -2<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<Up>', ':resize +2<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<Down>', ':resize -2<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<Right>', ':vertical resize +2<CR>', opts)
+vim.keymap.set('n', '<Left>', ':vertical resize -2<CR>', opts)
+vim.keymap.set('n', '<Up>', ':resize +2<CR>', opts)
+vim.keymap.set('n', '<Down>', ':resize -2<CR>', opts)
 
 vim.keymap.set('n', 'n', 'nzzzv')
 vim.keymap.set('n', 'N', 'Nzzzv')

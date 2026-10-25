@@ -29,7 +29,27 @@ require("lazy").setup({
       end,
     },
     { 'nvim-tree/nvim-web-devicons' },
-    { 'nvim-lualine/lualine.nvim' },
+    {
+      'nvim-lualine/lualine.nvim',
+      opts = {
+        options = {
+          icons_enabled = true,
+          theme = 'everforest',
+          component_separators = { left = '|', right = '|' },
+          section_separators = {},
+          globalstatus = true,
+        },
+        sections = {
+          lualine_a = { 'mode', function() if vim.o.iminsert == 1 then return 'RU' else return '' end end },
+          lualine_b = { 'FugitiveHead' },
+          lualine_c = { 'filename' },
+          lualine_x = { 'filetype', function() return string.format('%s[%s]', vim.bo.fileencoding, vim.bo.fileformat) end },
+          lualine_y = { 'progress' },
+          lualine_z = { 'location' },
+        },
+        extensions = { 'quickfix', 'fugitive' },
+      },
+    },
 
     -- File navigation
     {
