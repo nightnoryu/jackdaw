@@ -6,6 +6,11 @@ connect() {
   tsh ssh "$1"
 }
 
+fail() {
+  echo "$1" >&2
+  exit 1
+}
+
 connect_fuzzy() {
   HOSTS=$(tsh ls -f names)
   SELECTION=$(echo "$HOSTS" | fzf --height 40% --layout reverse --border)
@@ -13,9 +18,13 @@ connect_fuzzy() {
   if [ -n "$SELECTION" ]; then
     connect "$SELECTION"
   else
-    echo no host selected.
+    fail 'no host selected.'
   fi
 }
+
+if ! [ -x "$(command -v tsh)" ]; then
+  fail 'teleport not installed.'
+fi
 
 if [[ -n $1 ]]; then
   connect "$1"

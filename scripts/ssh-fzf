@@ -12,6 +12,11 @@ connect() {
   ssh "$1"
 }
 
+fail() {
+  echo "$1" >&2
+  exit 1
+}
+
 connect_fuzzy() {
   INCLUDED_CONFIGS=$(get_included_configs)
 
@@ -21,9 +26,13 @@ connect_fuzzy() {
   if [ -n "$SELECTION" ]; then
     connect "$SELECTION"
   else
-    echo no host selected.
+    fail 'no host selected.'
   fi
 }
+
+if [ ! -f "$BASE_SSH_CONFIG" ]; then
+  fail "$BASE_SSH_CONFIG does not exist."
+fi
 
 if [[ -n $1 ]]; then
   connect "$1"
