@@ -28,7 +28,7 @@ require("lazy").setup({
         vim.cmd.colorscheme 'everforest'
       end,
     },
-    { 'nvim-tree/nvim-web-devicons' },
+
     {
       'nvim-lualine/lualine.nvim',
       opts = {
@@ -51,6 +51,8 @@ require("lazy").setup({
       },
     },
 
+    { 'nvim-tree/nvim-web-devicons' },
+
     -- File navigation
     {
       'nvim-telescope/telescope.nvim', version = '*',
@@ -58,7 +60,30 @@ require("lazy").setup({
         'nvim-lua/plenary.nvim',
         { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
       },
+      config = function()
+        local telescope = require('telescope')
+        local actions = require('telescope.actions')
+        telescope.setup({
+          defaults = {
+            mappings = {
+              i = {
+                ['<C-x>'] = false,
+                ['<C-s>'] = actions.select_horizontal,
+                ['<esc>'] = actions.close,
+              },
+            },
+          },
+          extensions = {
+            fzf = {
+              fuzzy = true,
+              override_generic_sorter = true,
+              override_file_sorter = true,
+            },
+          },
+        })
+      end,
     },
+
     {
       'stevearc/oil.nvim',
       opts = {
@@ -78,10 +103,10 @@ require("lazy").setup({
     { 'numToStr/Comment.nvim', opts = { ignore = '^$' } },
     { 'tpope/vim-surround' },
     { 'tpope/vim-repeat' },
-    { 'windwp/nvim-autopairs', event = 'InsertEnter', opts = {} },
+    { 'windwp/nvim-autopairs', opts = {} },
 
     -- Git
-    { 'tpope/vim-fugitive', cmd = 'G' },
+    { 'tpope/vim-fugitive' },
     { 'lewis6991/gitsigns.nvim' },
   },
   checker = { enabled = false },
