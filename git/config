@@ -22,7 +22,7 @@
   autoSetupRemote = true
 
 [pull]
-  rebase = false
+  rebase = true
 
 [diff]
   context = 3
@@ -31,3 +31,6 @@
 
 [pager]
   diff = bat
+
+[alias]
+  tree = log --graph --decorate --pretty=oneline --abbrev-commit --all
