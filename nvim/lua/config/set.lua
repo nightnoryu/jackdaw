@@ -36,6 +36,9 @@ vim.opt.wildignorecase = true
 vim.opt.completeopt = 'menuone,noselect,popup'
 vim.opt.shortmess:append('c')
 
+vim.opt.pumheight = 6
+vim.opt.pumborder = 'rounded'
+
 vim.opt.diffopt:append('internal,algorithm:patience')
 
 vim.opt.keymap = 'russian-jcukenwin'
