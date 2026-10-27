@@ -101,7 +101,7 @@ hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.exec_cmd("power-menu"))
 hl.bind(mainMod .. " + L",         hl.dsp.exec_cmd("hyprlock"))
 
 -- Workspaces
-for i = 1, 6 do
+for i = 1, 8 do
     hl.bind(mainMod .. " + " .. i,           hl.dsp.focus({ workspace = i }))
     hl.bind(mainMod .. " + SHIFT + " .. i,   hl.dsp.window.move({ workspace = i }))
 end
