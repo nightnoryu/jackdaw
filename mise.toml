@@ -7,13 +7,13 @@
 "pacman:brightnessctl" = "latest"
 "pacman:waybar" = "latest"
 "pacman:wofi" = "latest"
+"pacman:mpv" = "latest"
 "pacman:fish" = "latest"
 "pacman:kitty" = "latest"
 "pacman:neovim" = "latest"
 "pacman:fzf" = "latest"
 "pacman:ripgrep" = "latest"
 "pacman:fd" = "latest"
-"pacman:mpv" = "latest"
 
 [settings]
 dotfiles.relative_symlinks = true
@@ -22,6 +22,7 @@ dotfiles.relative_symlinks = true
 "~/.config/hypr" = { source = "hypr", mode = "symlink" }
 "~/.config/waybar" = { source = "waybar", mode = "symlink" }
 "~/.config/wofi" = { source = "wofi", mode = "symlink" }
+"~/.config/mpv" = { source = "mpv", mode = "symlink" }
 
 "~/.config/fish" = { source = "fish", mode = "symlink" }
 "~/.config/kitty" = { source = "kitty", mode = "symlink" }
