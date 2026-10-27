@@ -11,6 +11,7 @@
 "pacman:fish" = "latest"
 "pacman:kitty" = "latest"
 "pacman:neovim" = "latest"
+"pacman:yazi" = "latest"
 "pacman:fzf" = "latest"
 "pacman:ripgrep" = "latest"
 "pacman:fd" = "latest"
