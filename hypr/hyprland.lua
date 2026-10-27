@@ -96,8 +96,9 @@ hl.bind(mainMod .. " + SHIFT + SPACE", hl.dsp.window.float({ action = "toggle" }
 hl.bind(mainMod .. " + F",             hl.dsp.window.fullscreen())
 hl.bind(mainMod .. " + mouse:272",     hl.dsp.window.drag(), { mouse = true })
 
--- Screen lock
-hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
+-- Heplers
+hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.exec_cmd("power-menu"))
+hl.bind(mainMod .. " + L",         hl.dsp.exec_cmd("hyprlock"))
 
 -- Workspaces
 for i = 1, 6 do

@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# wofi power menu
+
+ENTRIES="lock\nlogout\nreboot\nshutdown"
+
+SELECTION=$(echo -e $ENTRIES | wofi --dmenu --prompt "power menu")
+
+case $SELECTION in
+  "lock") hyprlock ;;
+  "logout") loginctl terminate-user $USER ;;
+  "reboot") systemctl reboot ;;
+  "shutdown") systemctl poweroff ;;
+esac
