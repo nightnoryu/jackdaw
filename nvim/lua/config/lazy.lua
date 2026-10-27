@@ -80,6 +80,11 @@ require("lazy").setup({
               override_file_sorter = true,
             },
           },
+          pickers = {
+            find_files = {
+              find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
+            },
+          },
         })
       end,
     },
