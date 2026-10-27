@@ -10,8 +10,8 @@
 "pacman:mpv" = "latest"
 "pacman:fish" = "latest"
 "pacman:kitty" = "latest"
-"pacman:neovim" = "latest"
 "pacman:yazi" = "latest"
+"pacman:neovim" = "latest"
 "pacman:fzf" = "latest"
 "pacman:ripgrep" = "latest"
 "pacman:fd" = "latest"
@@ -27,6 +27,7 @@ dotfiles.relative_symlinks = true
 
 "~/.config/fish" = { source = "fish", mode = "symlink" }
 "~/.config/kitty" = { source = "kitty", mode = "symlink" }
+"~/.config/yazi" = { source = "yazi", mode = "symlink" }
 
 "~/.config/nvim" = { source = "nvim", mode = "symlink" }
 "~/.config/git" = { source = "git", mode = "symlink" }
