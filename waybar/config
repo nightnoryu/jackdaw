@@ -4,15 +4,13 @@
   "margin-top": 0,
   "position": "top",
   "modules-left": [
-    "hyprland/workspaces",
-    "tray"
+    "hyprland/workspaces"
   ],
   "modules-center": [
     "hyprland/window"
   ],
   "modules-right": [
-    "cpu",
-    "memory",
+    "tray",
     "network",
     "pulseaudio",
     "battery",
@@ -28,20 +26,14 @@
   },
   "clock": {
     "format": "{:%H:%M}",
-    "interval": 60,
+    "interval": 30,
     "tooltip": true,
     "tooltip-format": "{:%d %B %H:%M}"
-  },
-  "cpu": {
-    "format": " {usage}%"
-  },
-  "memory": {
-    "format": " {}%"
   },
   "network": {
     "format": " {bandwidthDownBits}",
     "format-disconnected": "󰤮 No Network",
-    "interval": 5,
+    "interval": 30,
     "tooltip": false,
     "on-click": "kitty -e nmtui"
   },
@@ -50,7 +42,7 @@
     "max-volume": 100,
     "format": " {volume}%",
     "nospacing": 1,
-    "format-muted": "",
+    "format-muted": " 0%",
     "on-click": "pavucontrol",
     "tooltip": false
   },
