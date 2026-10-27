@@ -1,6 +1,6 @@
-----------------
+------------------
 ---- MONITORS ----
-----------------
+------------------
 
 hl.monitor({
     output   = "eDP-1",
@@ -9,12 +9,12 @@ hl.monitor({
     scale    = 1,
 })
 
-----------------
+------------------
 ---- PROGRAMS ----
-----------------
+------------------
 
 local terminal    = "kitty"
-local fileManager = "kitty -e ranger"
+local fileManager = "kitty -e yazi"
 local browser     = "chromium"
 local menu        = "pgrep wofi > /dev/null 2>&1 && killall wofi || wofi --show drun"
 
@@ -25,9 +25,9 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("waybar")
 end)
 
-----------------
----- INPUT ----
-----------------
+-----------------
+----- INPUT -----
+-----------------
 
 hl.config({
     input = {
@@ -54,19 +54,15 @@ hl.config({
     },
 
     general = {
-        gaps_in  = 5,
-        gaps_out = 10,
-
-        border_size = 1,
-
-        resize_on_border = true,
-
         layout = "dwindle",
+        gaps_in  = 5,
+        gaps_out = 5,
+        border_size = 1,
+        resize_on_border = true,
     },
 
     decoration = {
         rounding = 0,
-
         active_opacity   = 1.0,
         inactive_opacity = 1.0,
     },
@@ -82,9 +78,9 @@ hl.config({
     },
 })
 
-----------------
+------------------
 ---- KEYBINDS ----
-----------------
+------------------
 
 local mainMod = "SUPER"
 
