@@ -12,5 +12,5 @@ hide_scroll=true
 
 line_wrap=word
 no_actions=true
-insensitive=false
-prompt=Search
+insensitive=true
+prompt=Run
