@@ -25,10 +25,30 @@
     "spacing": 6
   },
   "clock": {
-    "format": "{:%H:%M}",
+    "format": "{:%Y-%m-%d %H:%M}",
     "interval": 30,
     "tooltip": true,
-    "tooltip-format": "{:%d %B %H:%M}"
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "year",
+      "iso8601": true,
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "on-click-right": "mode",
+      "format": {
+        "months": "<span color='#dadbd1'><b>{}</b></span>",
+        "days": "<span color='#a6bb8c'><b>{}</b></span>",
+        "weeks": "<span color='#bea184'><b>W{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
   },
   "network": {
     "format": " {bandwidthDownBits}",
