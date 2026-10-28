@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+# Changes the wallpaper via fzf picker
+
+set -o errexit
+
+WALLPAPERS_LOCATION="$HOME/pictures/wallpapers"
+
+set_for_hyprpaper() {
+  sed --follow-symlinks -i -E "s|^\s*path.+$|  path = $1|g" ~/.config/hypr/hyprpaper.conf
+  pkill hyprpaper && hyprpaper & disown
+}
+
+set_for_hyprlock() {
+  sed --follow-symlinks -i -E "s|^\s*path.+$|  path = $1|g" ~/.config/hypr/hyprlock.conf
+}
+
+set_wallpaper() {
+  set_for_hyprpaper "$1"
+  set_for_hyprlock "$1"
+}
+
+fail() {
+  echo "$1" >&2
+  exit 1
+}
+
+pick_wallpaper_fuzzy() {
+  SELECTION=$(ls "$WALLPAPERS_LOCATION" | fzf --height 40% --layout reverse --border)
+  if [ -n "$SELECTION" ]; then
+    NEW_PATH="~/pictures/wallpapers/$SELECTION"
+    set_wallpaper "$NEW_PATH"
+  else
+    fail 'no wallpaper selected.'
+  fi
+}
+
+if [ ! -d "$WALLPAPERS_LOCATION" ]; then
+  fail "$WALLPAPERS_LOCATION does not exist."
+fi
+
+pick_wallpaper_fuzzy
