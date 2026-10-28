@@ -2,6 +2,8 @@
 # Parses your `tsh ls` output and connects
 # to whichever host you picked via fzf.
 
+set -o errexit
+
 connect() {
   tsh ssh "$1"
 }

@@ -2,6 +2,8 @@
 # Parses your ssh config with includes (1-level only)
 # and connects to whichever host you picked via fzf.
 
+set -o errexit
+
 BASE_SSH_CONFIG="$HOME/.ssh/config"
 
 get_included_configs() {

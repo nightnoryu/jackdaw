@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # wofi power menu
 
+set -o errexit
+
 ENTRIES="lock\nlogout\nreboot\nshutdown"
 
 SELECTION=$(echo -e $ENTRIES | wofi --dmenu --prompt "power menu")
