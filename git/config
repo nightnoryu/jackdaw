@@ -29,8 +29,6 @@
   renames = copies
   interHunkContext = 10
 
-[pager]
-  diff = bat
-
 [alias]
   tree = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  unstage = reset HEAD --
