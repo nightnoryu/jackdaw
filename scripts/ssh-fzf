@@ -11,6 +11,7 @@ get_included_configs() {
 }
 
 connect() {
+  echo "Connecting to $1"
   ssh "$1"
 }
 
